@@ -6,7 +6,7 @@ controller.getFormattedData = async (req, res, next) => {
     const result = await transformHL7(req.body);
     res.status(200).send({ message: "success", data: result });
   } catch (error) {
-    next(error);
+    throw error;
   }
 };
 
